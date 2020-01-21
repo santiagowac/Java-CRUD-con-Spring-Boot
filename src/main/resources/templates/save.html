@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeleaf.org"></html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CRUD - SpringBoot - Thymeleaf</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <h2 class="mt-5 mb-4">Agregar Persona</h2>
+        <form action="#" th:action="@{/save}" class="form-group" th:object=${persona} method="post">
+            <input type="hidden" th:field="*{id}" name="id" id="id">
+            <div class="form-group">
+                <label for="formGroupExampleInput">Nombre</label>
+                <input type="text" class="form-control" id="nombre" placeholder="Ingrese el nombre de la persona" name="nombre" th:field="*{nombre}">
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput">Apellido</label>
+                <input type="text" class="form-control" id="apellido" placeholder="Ingrese el apellido de la persona" name="apellido" th:field="*{apellido}">
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput">Direccion</label>
+                <input type="text" class="form-control" id="direccion" placeholder="Ingrese la direccion de la persona" name="direccion" th:field="*{direccion}">
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput">telefono</label>
+                <input type="text" class="form-control" id="telefono" placeholder="Ingrese el telefono de la persona" name="telefono" th:field="*{telefono}">
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg active">Registrar</button>
+            <button type="button" class="btn btn-default btn-lg active"><a href="/" style="text-decoration: none;">Cancelar</a></button>
+        </form>
+    </div>
+</body>
+</html>
